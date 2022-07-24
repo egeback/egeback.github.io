@@ -1,23 +1,23 @@
 # K3S post install
-### Namespace
+## Namespace
 ```
 kubectl create namespace prod
 kubectl create namespace dev
 kubectl create namespace staging
 ```
 
-### Reflector
+## Reflector
 ```
 helm upgrade --install reflector emberstack/reflector -n kube-system
 ```
 
-### Traefik
+## Traefik
 ```
 helm repo add traefik https://helm.traefik.io/traefik
 helm repo update
 helm install traefik traefik/traefik -n kube-system -f values.yaml
 ```
-### Cert-manager
+## Cert-manager
 ```
 helm update \
 cert-manager jetstack/cert-manager \
@@ -36,7 +36,7 @@ kubectl apply -f egeback-se-tls.yaml -n staging
 kubectl apply -f egeback-se-tls.yaml -n dev
 ```
 
-### Rancher
+## Rancher
 ```
 kubectl create namespace cattle-system
 helm install rancher rancher-latest/rancher \
