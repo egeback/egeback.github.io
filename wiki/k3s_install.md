@@ -17,6 +17,7 @@
     --namespace cert-manager \
     --create-namespace \
     --set installCRDs=true
+  
   \# --version v1.8.2 \
   
   kubectl apply -f cloudflare-api-token-secret.yaml -n certmanager
