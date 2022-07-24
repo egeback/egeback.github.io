@@ -7,17 +7,20 @@
   helm upgrade --install reflector emberstack/reflector -n kube-system
 
 ### Traefik
+```
   helm repo add traefik https://helm.traefik.io/traefik
   helm repo update
   helm install traefik traefik/traefik -n kube-system -f values.yaml
-
+```
 ### Cert-manager
+```
   helm update \
     cert-manager jetstack/cert-manager \
     --namespace cert-manager \
     --create-namespace \
     --set installCRDs=true
-    \# --version v1.8.2 \
+    # --version v1.8.2 \
+```
   
   kubectl apply -f cloudflare-api-token-secret.yaml -n certmanager
   kubectl apply -f letsencrypt-global-prod.yaml
