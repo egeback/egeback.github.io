@@ -1,6 +1,6 @@
 # Proxmox
 
-### Proxmox create cloud-init
+## Proxmox create cloud-init
 ```
 qm create 9101 --memory 2048 --net0 virtio,bridge=vmbr0
 qm importdisk 9101 jammy-server-cloudimg-amd64.img rpool_ted
