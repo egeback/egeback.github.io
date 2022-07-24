@@ -1,3 +1,4 @@
+# K3S post install
 ### Namespace
 ```
 kubectl create namespace prod
