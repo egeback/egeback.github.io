@@ -1,7 +1,7 @@
 # (string) Title of your wiki
 title: Egeback wiki
 # (string) Description of your wiki
-description: Usefull commands
+description: Useful commands
 # (boolean) disable edit functionalities (edit/delete/add pages)
 disable_edit: false
 # (boolean) Enable/disable wiki page list in sidebar
