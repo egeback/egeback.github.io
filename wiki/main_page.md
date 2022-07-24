@@ -2,5 +2,5 @@
 redirect_from: "/"
 ---
 
-#Welcome to the Egeback wiki
+# Welcome to the Egeback wiki
 
