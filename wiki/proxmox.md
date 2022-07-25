@@ -26,14 +26,14 @@ qm template 9203
 qm create 9302 --memory 2048 --net0 virtio,bridge=vmbr0
 qm importdisk 9302 jammy-server-cloudimg-amd64.img local-lvm
 qm set 9302 --scsihw virtio-scsi-pci --scsi0 local-lvm:vm-9302-disk-0
-qm set 9302 --ide2 local_lvm:cloudinit
+qm set 9302 --ide2 local-lvm:cloudinit
 qm set 9302 --boot c --bootdisk scsi0
 qm template 9202
 
 qm create 9303 --memory 2048 --net0 virtio,bridge=vmbr0
 qm importdisk 9303 jammy-server-cloudimg-amd64.img local-lvm
 qm set 9303 --scsihw virtio-scsi-pci --scsi0 local-lvm:vm-9303-disk-0
-qm set 9303 --ide2 local_lvm:cloudinit
+qm set 9303 --ide2 local-lvm:cloudinit
 qm set 9303 --boot c --bootdisk scsi0
 qm template 9202
 ```
