@@ -32,7 +32,7 @@ metadata:
   namespace: kube-system
 spec:
   addresses:
-  - 10.0.1.50-10.0.1.59
+  - 10.0.1.50-10.0.1.59 # IP range for LoadBalancer
 ---
 apiVersion: metallb.io/v1beta1
 kind: L2Advertisement
