@@ -35,5 +35,5 @@ qm importdisk 9303 jammy-server-cloudimg-amd64.img local-lvm
 qm set 9303 --scsihw virtio-scsi-pci --scsi0 local-lvm:vm-9303-disk-0
 qm set 9303 --ide2 local-lvm:cloudinit
 qm set 9303 --boot c --bootdisk scsi0
-qm template 9202
+qm template 9203
 ```
