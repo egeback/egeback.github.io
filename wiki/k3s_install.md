@@ -20,6 +20,32 @@ helm repo update
 ## Metallb
 ```
 helm install metallb metallb/metallb --create-namespace -n kube-system
+```
+```
+cat metallb.yaml
+
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: lb-pool
+  #namespace: metallb-system
+  namespace: kube-system
+spec:
+  addresses:
+  - 10.0.1.50-10.0.1.59
+---
+apiVersion: metallb.io/v1beta1
+kind: L2Advertisement
+metadata:
+  name: l2
+  #namespace: metallb-system
+  namespace: kube-system
+spec:
+  ipAddressPools:
+  - lb-pool
+```
+
+```
 kubectl apply -f metallb.yaml
 ```
 
