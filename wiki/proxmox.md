@@ -2,24 +2,38 @@
 
 ## Proxmox create cloud-init
 ```
-qm create 9101 --memory 2048 --net0 virtio,bridge=vmbr0
-qm importdisk 9101 jammy-server-cloudimg-amd64.img rpool_ted
-qm set 9101 --scsihw virtio-scsi-pci --scsi0 rpool_ted:vm-9101-disk-0
-qm set 9101 --ide2 rpool_ted:cloudinit
-qm set 9101 --boot c --bootdisk scsi0
-qm template 9101
+qm create 9103 --memory 2048 --net0 virtio,bridge=vmbr0
+qm importdisk 9103 jammy-server-cloudimg-amd64.img rpool_ted
+qm set 9103 --scsihw virtio-scsi-pci --scsi0 rpool_ted:vm-9103-disk-0
+qm set 9103 --ide2 rpool_ted:cloudinit
+qm set 9103 --boot c --bootdisk scsi0
+qm template 9103
 
-qm create 9201 --memory 2048 --net0 virtio,bridge=vmbr0
-qm importdisk 9201 jammy-server-cloudimg-amd64.img rpool_james
-qm set 9201 --scsihw virtio-scsi-pci --scsi0 rpool_james:vm-9201-disk-0
-qm set 9201 --ide2 rpool_james:cloudinit
-qm set 9201 --boot c --bootdisk scsi0
-qm template 9201
+qm create 9202 --memory 2048 --net0 virtio,bridge=vmbr0
+qm importdisk 9202 jammy-server-cloudimg-amd64.img rpool_james
+qm set 9202 --scsihw virtio-scsi-pci --scsi0 rpool_james:vm-9202-disk-0
+qm set 9202 --ide2 rpool_james:cloudinit
+qm set 9202 --boot c --bootdisk scsi0
+qm template 9202
 
-qm create 9301 --memory 2048 --net0 virtio,bridge=vmbr0
-qm importdisk 9301 jammy-server-cloudimg-amd64.img rpool_james
-qm set 9301 --scsihw virtio-scsi-pci --scsi0 rpool_james:vm-9201-disk-0
-qm set 9301 --ide2 rpool_barney:cloudinit
-qm set 9301 --boot c --bootdisk scsi0
-qm template 9201
+qm create 9203 --memory 2048 --net0 virtio,bridge=vmbr0
+qm importdisk 9203 jammy-server-cloudimg-amd64.img rpool_james
+qm set 9203 --scsihw virtio-scsi-pci --scsi0 rpool_james:vm-9203-disk-0
+qm set 9203 --ide2 rpool_james:cloudinit
+qm set 9203 --boot c --bootdisk scsi0
+qm template 9203
+
+qm create 9302 --memory 2048 --net0 virtio,bridge=vmbr0
+qm importdisk 9302 jammy-server-cloudimg-amd64.img local-lvm
+qm set 9302 --scsihw virtio-scsi-pci --scsi0 local-lvm:vm-9302-disk-0
+qm set 9302 --ide2 local_lvm:cloudinit
+qm set 9302 --boot c --bootdisk scsi0
+qm template 9202
+
+qm create 9303 --memory 2048 --net0 virtio,bridge=vmbr0
+qm importdisk 9303 jammy-server-cloudimg-amd64.img local-lvm
+qm set 9303 --scsihw virtio-scsi-pci --scsi0 local-lvm:vm-9303-disk-0
+qm set 9303 --ide2 local_lvm:cloudinit
+qm set 9303 --boot c --bootdisk scsi0
+qm template 9202
 ```
