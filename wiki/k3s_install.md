@@ -24,12 +24,12 @@ helm upgrade --install reflector emberstack/reflector -n kube-system
 ```
 helm upgrade --install \
 cert-manager jetstack/cert-manager \
---namespace cert-manager \
+--namespace kube-system \
 --create-namespace \
 --set installCRDs=true
 # --version v1.8.2 \
   
-kubectl apply -f cloudflare-api-token-secret.yaml -n certmanager
+kubectl apply -f cloudflare-api-token-secret.yaml -n kube-system
 kubectl apply -f letsencrypt-global-prod.yaml
 kubectl apply -f egeback-com.yaml
 kubectl apply -f egeback-se-tls.yaml
