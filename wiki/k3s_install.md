@@ -15,6 +15,12 @@ helm repo add emberstack https://emberstack.github.io/helm-charts
 helm repo add jetstack https://charts.jetstack.io
 ```
 
+## Metallb
+```
+helm install metallb metallb/metallb --create-namespace -n kube-system
+kubectl apply -f metallb.yaml
+```
+
 ## Reflector
 ```
 helm upgrade --install reflector emberstack/reflector -n kube-system
