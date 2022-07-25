@@ -22,6 +22,7 @@ helm upgrade --install reflector emberstack/reflector -n kube-system
 
 ## Cert-manager
 ```
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.9.0/cert-manager.crds.yaml
 helm upgrade --install \
 cert-manager jetstack/cert-manager \
 --namespace kube-system \
