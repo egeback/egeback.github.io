@@ -14,6 +14,7 @@ helm repo add k8s-at-home https://k8s-at-home.com/charts/
 helm repo add emberstack https://emberstack.github.io/helm-charts
 helm repo add jetstack https://charts.jetstack.io
 helm repo add grafana https://grafana.github.io/helm-charts
+helm repo add longhorn https://charts.longhorn.io
 
 helm repo update
 ```
