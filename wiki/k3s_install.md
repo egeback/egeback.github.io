@@ -92,3 +92,8 @@ helm install rancher rancher-latest/rancher \
   --set replicas=3 \
   --set ingress.tls.source=egeback-com-tls
 ```
+
+## Commands
+```
+kubectl get node -o custom-columns=NAME:.metadata.name,TAINT:.spec.taints[*].effect
+```
