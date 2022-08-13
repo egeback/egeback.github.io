@@ -4,6 +4,8 @@
 ```
 apiVersion: v1
 kind: PersistentVolume
+metadata:
+  name: (name)
 spec:
   accessModes:
   - ReadWriteOnce
