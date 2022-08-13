@@ -10,8 +10,8 @@ spec:
   capacity:
     storage: 10Gi
   nfs:
-    path: {%export path}
-    server: {%ip/hostname to server}
+    path: ("export path")
+    server: ("hostname to server")
   persistentVolumeReclaimPolicy: Retain
   volumeMode: Filesystem
 ```
