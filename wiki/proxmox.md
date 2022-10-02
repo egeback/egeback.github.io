@@ -43,4 +43,16 @@ qm set 9304 --scsihw virtio-scsi-pci --scsi0 local-lvm:vm-9304-disk-0
 qm set 9304 --ide2 local-lvm:cloudinit
 qm set 9304 --boot c --bootdisk scsi0
 qm template 9304
+
+
+wget https://download.opensuse.org/tumbleweed/appliances/openSUSE-MicroOS.x86_64-kvm-and-xen.qcow2
+qm create 9105 --name microos --cores 2 --memory 4096 --net0 virtio,bridge=vmbr0
+qm importdisk 9105 openSUSE-MicroOS.x86_64-kvm-and-xen.qcow2 rpool_ted
+qm set 9105 --scsihw virtio-scsi-pci --scsi0 rpool_ted:vm-9105-disk-0
+qm set 9105 --boot c --bootdisk virtio0
+qm set 9105 --agent 1
+qm set 9105 --vga qxl
+qm set 9105 --machine q35
+qm resize 9105 scsi0 +10000M
+qm template 9105
 ```
