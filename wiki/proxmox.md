@@ -25,9 +25,12 @@ export VM_ID=9100
 export VM_ID=1030
 export VM_NAME=tracy
 export HOST_ID=ted
-sudo qm set --memory 4096
+export MEMORY=4096
+export EXTEND_DISK=44
+
 sudo pvesh create nodes/$HOST_ID/qemu/$TEMPLATE_ID/clone --newid $VM_ID --full --name=$VM_NAME
-sudo qm resize $VM_ID scsi0 +44G
+sudo qm set --memory §MEMORY
+sudo qm resize $VM_ID scsi0 +§EXTEND_DISKG
 
 echo args: -fw_cfg name=opt/com.coreos/config,file=/mnt/pve/pibox/microos/$VM_NAME/config.ign -fw_cfg name=opt/org.opensuse.combustion/script,file=/mnt/pve/pibox/microos/script | sudo tee -a /etc/pve/qemu-server/$VM_ID.conf > /dev/null
 
