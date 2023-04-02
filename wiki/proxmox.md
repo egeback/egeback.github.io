@@ -21,9 +21,11 @@ qm template $TEMPLATE_ID
 
 ## Create a clone of the MicroOS template file
 ```
+export VM_ID=9100
 export VM_ID=1030
 export VM_NAME=tracy
-sudo pvesh create nodes/ted/qemu/9100/clone --newid $VM_ID --full --name=$VM_NAME
+sudo qm set --memory 4096
+sudo pvesh create nodes/ted/qemu/$TEMPLATE_ID/clone --newid $VM_ID --full --name=$VM_NAME
 sudo qm resize $VM_ID scsi0 +44G
 
 echo args: -fw_cfg name=opt/com.coreos/config,file=/mnt/pve/pibox/microos/$VM_NAME/config.ign -fw_cfg name=opt/org.opensuse.combustion/script,file=/mnt/pve/pibox/microos/script | sudo tee -a /etc/pve/qemu-server/$VM_ID.conf > /dev/null
