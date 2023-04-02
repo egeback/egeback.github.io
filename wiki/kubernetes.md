@@ -38,8 +38,8 @@ Change environment variables:
 ```
   - name: vip_leaseduration
       value: "30"
-    - name: vip_renewdeadline
+  - name: vip_renewdeadline
       value: "20"
-    - name: vip_retryperiod
+  - name: vip_retryperiod
       value: "4"
 ```
