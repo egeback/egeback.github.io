@@ -21,12 +21,11 @@ qm template $TEMPLATE_ID
 
 ## Create a clone of the MicroOS template file
 ```
-export VM_ID=9100
 export VM_ID=1030
+export TEMPLATE_ID=9100
 export VM_NAME=tracy
 export HOST_ID=ted
-export MEMORY=4096
-export EXTEND_DISK=44
+export EXTEND_DISK=100G
 
 sudo pvesh create nodes/$HOST_ID/qemu/$TEMPLATE_ID/clone --newid $VM_ID --full --name=$VM_NAME
 sudo qm set --memory $MEMORY
