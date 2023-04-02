@@ -5,18 +5,18 @@
 wget https://download.opensuse.org/tumbleweed/appliances/openSUSE-MicroOS.x86_64-kvm-and-xen.qcow2
 
 
-export $TEMPLATE_ID=9100
+export TEMPLATE_ID=9100
 export POOL=rpool_ted
 
-qm create $$TEMPLATE_ID --name microos --cores 2 --memory 4096 --net0 virtio,bridge=vmbr0
-qm importdisk $$TEMPLATE_ID openSUSE-MicroOS.x86_64-kvm-and-xen.qcow2 $POOL
-qm set $$TEMPLATE_ID --scsihw virtio-scsi-pci --scsi0 $POOL:vm-$$TEMPLATE_ID-disk-0
-qm set $$TEMPLATE_ID --boot c --bootdisk virtio0
-qm set $$TEMPLATE_ID --agent 1
-qm set $$TEMPLATE_ID --vga qxl
-qm set $$TEMPLATE_ID --onboot 1
-qm set $$TEMPLATE_ID --machine q35
-qm template $$TEMPLATE_ID
+qm create $TEMPLATE_ID --name microos --cores 2 --memory 4096 --net0 virtio,bridge=vmbr0
+qm importdisk $TEMPLATE_ID openSUSE-MicroOS.x86_64-kvm-and-xen.qcow2 $POOL
+qm set $TEMPLATE_ID --scsihw virtio-scsi-pci --scsi0 $POOL:vm-$TEMPLATE_ID-disk-0
+qm set $TEMPLATE_ID --boot c --bootdisk virtio0
+qm set $TEMPLATE_ID --agent 1
+qm set $TEMPLATE_ID --vga qxl
+qm set $TEMPLATE_ID --onboot 1
+qm set $TEMPLATE_ID --machine q35
+qm template $TEMPLATE_ID
 ```
 
 ## Create a clone of the MicroOS template file
