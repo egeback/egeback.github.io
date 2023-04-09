@@ -58,14 +58,15 @@ spec:
   template:
     spec:
       affinity:
-        preferredDuringSchedulingIgnoredDuringExecution:
-            - podAffinityTerm:
-                labelSelector:
-                  matchExpressions:
-                    - key: app.kubernetes.io/name
-                      operator: In
-                      values:
-                        - adguard-home
-                topologyKey: kubernetes.io/hostname
-              weight: 100
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+              - podAffinityTerm:
+                  labelSelector:
+                    matchExpressions:
+                      - key: app.kubernetes.io/name
+                        operator: In
+                        values:
+                          - adguard-home
+                  topologyKey: kubernetes.io/hostname
+                weight: 100
 ```
