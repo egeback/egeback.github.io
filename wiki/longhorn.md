@@ -98,7 +98,7 @@ data:
   AWS_ENDPOINTS: aHR0cHM6Ly9taW5pb2xhYi5yYW5jaGVyLm9uZTo0NDM=
 ```
 
-Compose a backup target endpoint URL that should follow this format: “s3://bucket_name@region/folder”. Home lab installations does not generally specify a region a dummy url can be used. Based on that format, the backup target URL will be:
+Compose a backup target endpoint URL that should follow this format: “s3://bucket_name@region/folder”. Home lab installations does not generally specify a region a dummy url can be used. Based on that format, the backup target URL can be:
 ```
 s3://rancherbackups@europe-west1/longhorn
 ```
