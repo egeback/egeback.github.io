@@ -102,4 +102,16 @@ Compose a backup target endpoint URL that should follow this format: “s3://buc
 ```
 s3://rancherbackups@europe-west1/longhorn
 ```
+Add it to Settings->General section in longhorn:
 ![Longhorn backup target](https://raw.githubusercontent.com/egeback/egeback.github.io/master/assets/images/longhorn-backup-target.png)
+
+
+
+The backup option is now enabled for the volumes and can be managed in the gui:
+![Longhorn backups](https://raw.githubusercontent.com/egeback/egeback.github.io/61dd40e9f52b63a574161cff8bb45b91c3bf586d/assets/images/longhorn-backups.png)
+
+
+Automatic backup jobs can be scheduled i the Recurring Job section:
+
+![Longhorn autopmatic jobs](https://raw.githubusercontent.com/egeback/egeback.github.io/master/assets/images/longhorn-jobs.png)
+
