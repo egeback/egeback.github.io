@@ -29,3 +29,14 @@ $ kubectl apply -f https://raw.githubusercontent.com/kube-vip/kube-vip-cloud-pro
 ```
 kubectl create configmap --namespace kube-system kubevip --from-literal range-global=192.168.0.200-192.168.0.202
 ```
+### Other
+#### Fix reboots
+Change environment variables:
+```
+  - name: vip_leaseduration
+      value: "30"
+  - name: vip_renewdeadline
+      value: "20"
+  - name: vip_retryperiod
+      value: "4"
+```
