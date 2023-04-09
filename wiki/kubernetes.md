@@ -49,7 +49,7 @@ spec:
                         - 'true'
                 weight: 100
 ```
-## Force scheduling on differnt nodes
+## Force scheduling on different nodes
 Example with pods with label app.kubernetes.io/name = adguard-home
 ```
 apiVersion: apps/v1
