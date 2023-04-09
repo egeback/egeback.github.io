@@ -102,4 +102,4 @@ Compose a backup target endpoint URL that should follow this format: “s3://buc
 ```
 s3://rancherbackups@europe-west1/longhorn
 ```
-![Longhorn backup target](https://github.com/egeback/egeback.github.io/blob/master/assets/images/longhorn-backup-target.png)
+![Longhorn backup target](https://raw.githubusercontent.com/egeback/egeback.github.io/master/assets/images/longhorn-backup-target.png)
