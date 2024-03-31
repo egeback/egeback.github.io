@@ -1,10 +1,10 @@
 # K3S install
-## Install master
+## Install first server
 ```
 curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.29.3+k3s1 sh -s server --cluster-init --node-name {{ inventory_hostname }} --token "{GENERATED_TOKEN}" --no-deploy servicelb --no-deploy traefik --write-kubeconfig-mode 644 --kube-apiserver-arg default-not-ready-toleration-seconds=30 --kube-apiserver-arg default-unreachable-toleration-seconds=30 --kube-controller-arg node-monitor-period=20s --kube-controller-arg node-monitor-grace-period=20s --kubelet-arg node-status-update-frequency=5s --tls-san {SAN_ADDRESS} --kube-controller-manager-arg bind-address=0.0.0.0 --kube-proxy-arg metrics-bind-address=0.0.0.0 --kube-scheduler-arg bind-address=0.0.0.0 --etcd-expose-metrics true --kubelet-arg containerd=/run/k3s/containerd/containerd.sock
 ```
 
-## Install worker nodes (if separated)
+## Install aditional servers
 ```
 curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.29.3+k3s1 K3S_TOKEN="{GENERATED_TOKEN}" sh -s - server --server https://{SAN_ADDRESS}:6443 --node-name {{ inventory_hostname }} --no-deploy servicelb --no-deploy traefik --write-kubeconfig-mode "0644" --kubelet-arg node-status-update-frequency=5s --kube-apiserver-arg default-not-ready-toleration-seconds=30 --kube-apiserver-arg default-unreachable-toleration-seconds=30 --kube-controller-arg node-monitor-period=20s --kube-controller-arg node-monitor-grace-period=20s --kube-controller-manager-arg bind-address=0.0.0.0 --kube-proxy-arg metrics-bind-address=0.0.0.0 --kube-scheduler-arg bind-address=0.0.0.0 --etcd-expose-metrics true --kubelet-arg containerd=/run/k3s/containerd/containerd.sock
 ```
