@@ -52,7 +52,7 @@ Create controlplane.patch:
         disabled: true
       network:
         cni:
-          name: none # On installera Cilium manuellement
+          name: none # To use Cilium
       # A list of urls that point to additional manifests.
       extraManifests:
         - https://raw.githubusercontent.com/alex1989hu/kubelet-serving-cert-approver/main/deploy/standalone-install.yaml
