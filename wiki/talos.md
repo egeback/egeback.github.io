@@ -129,7 +129,7 @@ talosctl apply-config --nodes <NODE2_IP> --file kube-server-3.yaml --insecure
 Bootstrap cluster:<br>
 `talosctl bootstrap --talosconfig talosconfig --nodes <NODE1_IP> --endpoints <NODE1_IP>`
 
-Install Cilium (https://www.talos.dev/v1.8/kubernetes-guides/network/deploying-cilium/#machine-config-preparation)<br>
+Install Cilium (https://www.talos.dev/v1.8/kubernetes-guides/network/deploying-cilium/#machine-config-preparation). Will replace kube-proxy and metallb<br>
 
     helm install \
     cilium \
