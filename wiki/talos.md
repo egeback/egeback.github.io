@@ -26,7 +26,7 @@ Create controlplane.patch:
     
         # Used to provide instructions for installations.
         install:
-            image: factory.talos.dev/installer/<IMAGE_ID>:<TALOS_VERSION> # Allows for supplying the image used to perform the installation.
+            image: factory.talos.dev/installer/<IMAGE_ID_FROM_IMAGE_FACTORY>:<TALOS_VERSION> # Allows for supplying the image used to perform the installation.
     
         # Example configuration for cloudflare ntp server.
         time:
