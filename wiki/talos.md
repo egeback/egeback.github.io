@@ -145,6 +145,11 @@ Install Cilium (https://www.talos.dev/v1.8/kubernetes-guides/network/deploying-c
     --set k8sServiceHost=localhost \
     --set k8sServicePort=7445
 
+Check status in the dashboard<br>:
+`talosctl --talosconfig talosconfig --nodes <NODE_IP> --endpoints <NODE_IP> dashboard`
+
+Download kubectl config<br>:
+`talosctl --talosconfig talosconfig --nodes <NODE_IP> --endpoints <NODE_IP> kubeconfig`
 
 
 
