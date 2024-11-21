@@ -113,18 +113,18 @@ Generate config:<br>
 `talosctl gen config <$CLUSTER_NAME> https://$CONTROL_PLANE_IP:6443 --with-secrets secrets.yaml --config-patch=@controlplane.patch --force`
 
 Generate machine configs:<br>
-`
-talosctl machineconfig patch controlplane.yaml --patch @kube-server-1.patch --output kube-server-1.yaml
-talosctl machineconfig patch controlplane.yaml --patch @kube-server-2.patch --output kube-server-2.yaml
-talosctl machineconfig patch controlplane.yaml --patch @kube-server-3.patch --output kube-server-3.yaml
-`
+
+    talosctl machineconfig patch controlplane.yaml --patch @kube-server-1.patch --output kube-server-1.yaml
+    talosctl machineconfig patch controlplane.yaml --patch @kube-server-2.patch --output kube-server-2.yaml
+    talosctl machineconfig patch controlplane.yaml --patch @kube-server-3.patch --output kube-server-3.yaml
+
 
 Apply config:<br>
-`
-talosctl apply-config --nodes <NODE1_IP> --file kube-server-1.yaml --insecure
-talosctl apply-config --nodes <NODE2_IP> --file kube-server-2.yaml --insecure
-talosctl apply-config --nodes <NODE2_IP> --file kube-server-3.yaml --insecure
-`
+
+    talosctl apply-config --nodes <NODE1_IP> --file kube-server-1.yaml --insecure
+    talosctl apply-config --nodes <NODE2_IP> --file kube-server-2.yaml --insecure
+    talosctl apply-config --nodes <NODE2_IP> --file kube-server-3.yaml --insecure
+
 
 Bootstrap cluster:<br>
 `talosctl bootstrap --talosconfig talosconfig --nodes <NODE1_IP> --endpoints <NODE1_IP>`
