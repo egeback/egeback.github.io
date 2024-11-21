@@ -1,6 +1,6 @@
 # Talos
 Talos on proxmox guide: [Talos Guide](https://www.talos.dev/v1.8/talos-guides/install/virtualized-platforms/proxmox/)
-Generate image: https://factory.talos.dev/
+Generate image: [Image factory](https://factory.talos.dev/)
 
 Create controlplane.patch:
 
